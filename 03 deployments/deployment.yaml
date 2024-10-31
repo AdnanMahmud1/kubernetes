@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-replicaset
+  name: myapp-deployment
   labels:
     tier: frontend
     app: nginx
@@ -19,4 +19,3 @@ spec:
       containers:
         - name: nginx
           image: nginx
-
