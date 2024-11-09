@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ict-app-deploy
+  labels:
+    app: ict-website-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ict-website-app
+  template:
+    metadata:
+      name: ict-app-pod
+      labels:
+        name: ict-app-pod
+        app: ict-website-app
+    spec:
+      containers:
+        - name: ict-app
+          image: adnanm1250/ict-cell
+          ports:
+            - containerPort: 3701
